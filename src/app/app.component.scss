@@ -16,10 +16,18 @@ h3 {
   padding: 20px;
   overflow: hidden;
   box-sizing: border-box;
+  position: relative;
 }
 
 .drophere {
   @extend .row;
   justify-content: flex-end;
   align-items: center;
+}
+
+.version {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: lighten($back-color, 10%);
 }

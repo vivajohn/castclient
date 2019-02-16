@@ -3,8 +3,8 @@
     [ngClass]="{'dropborder': isFileHover}"
     class="playbox">
 
-  <div *ngIf="!playItems" class="drophere">
-    <h3>v17 Drop audio files here or click this button:</h3>
+  <div *ngIf="!playItems" class="drophere rowfull">
+    <h3>Drop audio files here or click this button:</h3>
     <button mat-fab (click)="fileInput.click()">
       <mat-icon aria-label="Pause">playlist_add</mat-icon>
     </button>
@@ -13,4 +13,6 @@
   <player *ngIf="playItems" #player [playitems]="playItems" (upload)="fileInput.click()"></player>
 
   <input type="file" style="display:none;" #fileInput (change)="upload(fileInput.files)" multiple/>
+
+  <span *ngIf="!playItems" class="version">v18</span>
 </div>
