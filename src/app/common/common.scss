@@ -1,0 +1,150 @@
+$mat-gold: #ffd740;
+$fore-color: lighten(lightgray, 8%);
+$back-color: darken(darkgray, 30%);
+
+$header-backcolor:  darken(darkgray, 50%);
+$light-backcolor: lighten(lightgrey, 12%);
+$dark-backcolor: #434343;
+$indent: 20px;
+$navbar-height: 50px;
+
+.pointer {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  cursor: pointer;
+}
+
+.disabled {
+  opacity: 0.4;
+}
+
+.indent {
+  margin-left: $indent;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.rowfull {
+  @extend .row;
+  justify-content: space-between;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.colfull {
+  @extend .col;
+  justify-content: space-between;
+}
+
+.colcenter {
+  @extend .col;
+  align-items: center;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.navbar {
+  @extend .rowfull;
+  height: $navbar-height;
+
+  background: $header-backcolor;
+  padding: 0 10px;
+  // height: 70px;
+
+  &-left {
+    @extend .row;
+    justify-content: flex-start;
+    align-items: center;
+    // width: 33%;
+    padding: 0;
+    margin: 0;
+
+    button {
+      margin-right: 10px;
+    }
+  }
+  // &-left > * {
+  //   margin-right: 10px;
+  // }
+
+  &-right {
+    @extend .row;
+    justify-content: flex-end;
+    align-items: center;
+    // width: 33%;
+    padding: 0;
+    margin: 0;
+    
+    button {
+      margin-left: 10px;
+    }
+  }
+  // &-right > * {
+  //   margin-left: 10px;
+  // }
+
+}
+
+.navbar-middle {
+  @extend .row;
+  justify-content: center;
+  align-items: center;
+  color: $fore-color;
+  font-size: 1.1rem;
+  // width: 34%;
+}
+
+.navmain {
+  @extend .rowfull;
+  // width: 100%;
+  // height: 100%;
+  background: $dark-backcolor;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.mat-raised-button {
+  background: #ffeb3b;
+}
+
+// .mat-mini-fab {
+//   @extend .row;
+//   justify-content: center;
+//   height: 28px;
+//   width: 28px;
+//   padding-bottom: 8px;
+//   // background-color: lightgrey;
+
+//   mat-icon {
+//     height: 20px;
+//     line-height: 9px;
+//   }
+// }
+  
+.left-icons {
+  @extend .row;
+  justify-content: flex-start;
+}
+.left-icons > * {
+  margin-right: 20px;
+}
+  
+.right-icons {
+  @extend .row;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+.right-icons > * {
+  margin-left: 15px;
+}

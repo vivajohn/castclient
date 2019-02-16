@@ -1,27 +1,18 @@
 # Castclient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
+This is a no-frills web application for playing back lists of audio files. I built it because I could not find a basic playback utility which would allow me to use Chromecast to broadcast music in 3 rooms in my apartment. I just wanted a simple utility to playback a list of audio files. Most of what is available is oriented toward video playback, so audio playback is an afterthought. They were often complicated to use and had a lot of overhead due to reading album art and what not. (One had troubles handling lists of more than ten files.)
+ 
+**Features**
+ 1. Files may be uploaded using the upload button or dragging and dropping files onto the page
+ 2. Next/Previous buttons for moving through the list or click on an item to start playing it immediately
+ 3. Volume control
+ 4. Looping button
+ 5. Shuffle button
+ 6. Play order may be changed by dragging and dropping within the list
 
-## Development server
+**Trouble-shooting:**
+- If files don't play, make sure that you do not have 'autoplay' disabled in your browser.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+**Tech stuff:**
+- Angular 7, Typescript, Html, Css, Scss
+- Developed using the Angular CLI in Visual Studio Code 

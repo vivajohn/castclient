@@ -1,0 +1,25 @@
+@import './common/common.scss';
+
+h3 {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+
+.dropborder {
+  border: 3px $mat-gold dashed;
+}
+
+.playbox {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.drophere {
+  @extend .row;
+  justify-content: flex-end;
+  align-items: center;
+}

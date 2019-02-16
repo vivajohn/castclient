@@ -1,0 +1,122 @@
+@import '../../common/common.scss';
+
+.player {
+  @extend .col;
+  height: 100%;
+}
+
+.upload-table {
+  overflow: auto;
+  height: 100%;
+}
+
+.txt-show {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s linear;
+}
+.txt-hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 3s, opacity 2s linear;
+}
+
+.slider {
+  @extend .row;
+  width: 100%;
+  margin: 10px 15px 20px 0;
+
+  // button:first-of-type {
+  //   margin: 0 0 0 15px;
+  // }
+  // button:last-of-type {
+  //   margin: 0 30px 0 0;
+  // }
+
+  mat-slider {
+    width: 100%;
+    margin: 0 15px 0 0;
+  }
+}
+
+.buttons {
+  @extend .rowfull;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 15px;
+
+  button {
+    margin-right: 15px;
+  }
+
+  &-group {
+    display: inline-block;
+  }
+}
+
+.addfiles {
+  @extend .row;
+
+  &-button {
+    margin-right: 15px;
+    button {
+      margin-right: 0;
+    }
+  }
+
+  &-lastbutton {
+    margin-right: 0;
+    button {
+      margin-right: 0;
+    }
+  }
+
+  h3 {
+    display: inline-block;
+    margin: 0 10px 0 0;
+    opacity: 0;
+  }
+
+  .rowright {
+    @extend .row;
+    justify-content: flex-end;
+  }
+}
+
+.grayed {
+  opacity: 0.5;
+}
+
+.selected {
+  background: $mat-gold;
+  color: $back-color;
+}
+
+td {
+  padding: 0 10px;
+}
+
+// If the device supports hovering then hide/show the delete item button on mouseover
+@media (hover: hover) {
+  .hovershow {
+    &-icon {
+      opacity: 0;
+    }
+
+    &:hover &-icon {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 2s linear;
+}
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}

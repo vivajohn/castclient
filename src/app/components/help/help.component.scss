@@ -1,0 +1,17 @@
+@import '../../common/common.scss';
+
+strong {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.mat-dialog-actions {
+  margin: 0;
+  padding: 0;
+}
+
+.close {
+  @extend .row;
+  justify-content: flex-end;
+  width: 100%;
+}

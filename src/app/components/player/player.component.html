@@ -1,0 +1,88 @@
+<div class="player">
+  <audio-plus #audioPlayer [src]="playlist.selected ? playlist.selected.url : null"></audio-plus>
+
+  <div class="buttons"> 
+    <div class="col">
+      <div class="row">
+        <div class="buttons-group">
+          <button [disabled]="!playlist.playItems || wait || !playlist.canPrev()" mat-fab (click)="onPrevious()">
+            <mat-icon aria-label="Pause">skip_previous</mat-icon>
+          </button>
+
+          <button *ngIf="!player.isPlaying" mat-fab (click)="onPlayPause()" [disabled]="!playlist.playItems || wait">
+            <mat-icon aria-label="Play">play_arrow</mat-icon>
+          </button>
+            
+          <button *ngIf="player.isPlaying" mat-fab (click)="onPlayPause()">
+            <mat-icon aria-label="Pause">pause</mat-icon>
+          </button>
+          
+          <button [disabled]="!playlist.playItems || wait || !playlist.canNext()" mat-fab (click)="onNext()">
+            <mat-icon aria-label="Pause">skip_next</mat-icon>
+          </button>
+        </div>
+        <div class="buttons-group">
+          <button [disabled]="!playlist.playItems || wait" mat-fab [matTooltip]="loopTip" (click)="playlist.isLoop = !playlist.isLoop">
+            <mat-icon aria-label="Loop" [ngClass]="{'grayed': !playlist.isLoop}">loop</mat-icon>
+          </button>
+
+          <button [disabled]="!playlist.playItems || wait" mat-fab [matTooltip]="shuffleTip" (click)="toggleShuffle()">
+            <mat-icon aria-label="Shuffle" [ngClass]="{'grayed': !playlist.isShuffle}">shuffle</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="slider">
+        <button mat-mini-fab (click)="player.volume = player.volume - 1">
+          <mat-icon aria-label="Volume down">volume_down</mat-icon>
+        </button>
+        <mat-slider min="0" max="100" step="1" (input)="player.volume = $event.value" [value]="player.volume"></mat-slider>
+        <button mat-mini-fab (click)="player.volume = player.volume + 1">
+          <mat-icon aria-label="Volume up">volume_up</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="addfiles">
+      <div class="rowright">
+        <h3 *ngIf="fadeState !== 'ended'" [@faderOut]="fadeState" (@faderOut.done)="onFadeOutDone()">
+          Drop more files or click here:
+        </h3>
+        <div class="addfiles-button">
+          <button mat-fab (click)="upload.emit()" matTooltip="Add files to the playtlist">
+            <mat-icon aria-label="Pause">playlist_add</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="addfiles-lastbutton">
+        <button mat-fab (click)="openHelp()" matTooltip="Open help window">
+          <mat-icon aria-label="Help">help_outline</mat-icon>
+        </button>
+      </div>
+    </div> 
+  </div>
+
+  <div *ngIf="playlist.playItems" class="upload-table">
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class="upload-name-style" cdkDropList (cdkDropListDropped)="onDrop($event)">
+        <tr class="hovershow" *ngFor="let item of playlist.playItems">
+          <td [ngClass]="{'selected': playlist.selected === item}" class="clickable" (click)="onSelect(item)"  cdkDrag>
+            {{ item.name }}
+          </td>
+          <td>
+            <button class="hovershow-icon" mat-mini-fab (click)="remove(item)">
+              <mat-icon aria-label="Remove from list">clear</mat-icon>
+            </button>
+          </td>
+          <!-- <td>{{ item.type }}</td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
