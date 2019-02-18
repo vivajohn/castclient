@@ -1,5 +1,4 @@
 import { PlayItem } from './play-item';
-import { moveItemInArray } from '@angular/cdk/drag-drop';
 
 // Manages a list of audio urls. 
 // Contains operations for moving through the list as they are played.
@@ -76,10 +75,16 @@ export class Playlist {
   }
 
   moveItem(iFrom: number, iTo: number) {
-    moveItemInArray(this.playItems, iFrom, iTo);
+    this.moveItemInArray(this.playItems, iFrom, iTo);
     if (!this.isShuffle) {
-      moveItemInArray(this.originalItems, iFrom, iTo);
+      this.moveItemInArray(this.originalItems, iFrom, iTo);
     }
+  }
+
+  private moveItemInArray(array: any[], iFrom: number, iTo: number) {
+    const item = array[iFrom];
+    array.splice(iFrom, 1);
+    array.splice(iTo, 0, item);
   }
 
   private get currentIndex(): number {

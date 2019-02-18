@@ -13,7 +13,7 @@ A demo is available [here](https://castclient-234cf.firebaseapp.com/).
  6. Play order may be changed by dragging and dropping within the list
 
 **Trouble-shooting:**
-- If files don't play, make sure that you do not have 'autoplay' disabled in your browser.
+- If files don't play or only the first file plays, make sure that you do not have 'autoplay' disabled in your browser.
 
 **Tech stuff:**
 - Angular 7, Typescript, Html, Css, Scss
