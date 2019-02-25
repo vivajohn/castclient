@@ -45,7 +45,7 @@ export class Playlist {
   }
 
   canNext(): boolean {
-    return this.isLoop ? true : this.currentIndex < this.playItems.length;
+    return this.isLoop ? true : this.currentIndex < (this.playItems.length - 1);
   }
 
   canPrev(): boolean {
