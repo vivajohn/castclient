@@ -28,7 +28,6 @@ export class AudioPlusComponent implements OnInit {
   }
 
   @Output() playing = new EventEmitter();
-  @Output() paused = new EventEmitter();
   @Output() ended = new EventEmitter();
   @Output() volumeChange = new EventEmitter();
 
