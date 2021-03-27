@@ -7,7 +7,6 @@ import { DragDropModule, CdkDragDrop } from '@angular/cdk/drag-drop';
 import { AudioPlusComponent } from '../audio-plus/audio-plus.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlayItem } from 'src/app/classes/play-item';
-import 'hammerjs';
 import { Playlist } from 'src/app/classes/playlist';
 import { Subject } from 'rxjs';
 
