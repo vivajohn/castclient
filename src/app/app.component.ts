@@ -2,7 +2,7 @@ import { Component, ViewChild, ElementRef} from '@angular/core';
 import { PlayItem } from './classes/play-item';
 import { Observable, Subject, of, interval, merge } from 'rxjs';
 import { map, mapTo, last, filter, catchError, onErrorResumeNext } from 'rxjs/operators';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'root',

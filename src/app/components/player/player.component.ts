@@ -3,7 +3,8 @@ import { AudioPlusComponent } from '../audio-plus/audio-plus.component';
 import { PlayItem } from 'src/app/classes/play-item';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { CdkDragDrop } from '@angular/cdk/drag-drop';
-import { MatSnackBar, MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { HelpComponent } from '../help/help.component';
 import { Playlist } from 'src/app/classes/playlist';
 

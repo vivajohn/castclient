@@ -1,8 +1,13 @@
 import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 
 import { PlayerComponent } from './player.component';
-import { MatIconModule, MatButtonModule, MatProgressSpinnerModule, MatTooltipModule, 
-  MatSliderModule, MatSnackBarModule, MatDialogModule, MatDialog } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule, MatDialog } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { DragDropModule, CdkDragDrop } from '@angular/cdk/drag-drop';
 import { AudioPlusComponent } from '../audio-plus/audio-plus.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
