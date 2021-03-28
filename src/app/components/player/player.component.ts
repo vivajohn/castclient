@@ -152,10 +152,7 @@ export class PlayerComponent implements AfterViewInit {
     this.wait = true;
     setTimeout(() => {
       this.wait = false;
-      this.player.play().catch(err => {
-        console.log(err);
-        this.onError(this.playlist.selected);
-      });
+      this.player.play();
     }, pauseTime); // pause between files
   } 
 

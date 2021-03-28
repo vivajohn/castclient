@@ -64,6 +64,7 @@ export class AudioPlusComponent implements OnInit {
   }
 
   play(): Promise<void> {
+    // On Chrome, this can return null
     return this.player.play();
   }
 
