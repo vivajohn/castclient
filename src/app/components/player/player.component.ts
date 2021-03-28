@@ -31,7 +31,7 @@ export class PlayerComponent implements AfterViewInit {
 
   readonly PAUSE_TIME = 500;
 
-  @ViewChild('audioPlayer', { read: AudioPlusComponent }) player: AudioPlusComponent;
+  @ViewChild('audioPlayer', { read: AudioPlusComponent, static: true }) player: AudioPlusComponent;
 
   @Input() set playitems(value: PlayItem[]) {
     if (!value || value.length === 0) {

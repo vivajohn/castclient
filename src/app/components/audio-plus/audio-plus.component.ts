@@ -12,7 +12,7 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 })
 export class AudioPlusComponent implements OnInit {
 
-  @ViewChild('audioPlayer') audioElement: ElementRef;
+  @ViewChild('audioPlayer', { static: true }) audioElement: ElementRef;
 
   @Input() set src(url: string) {
     // Do not use null because audio element makes a bad http request if its src is null

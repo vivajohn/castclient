@@ -11,7 +11,7 @@ import { MatSnackBar } from '@angular/material';
 })
 export class AppComponent {
 
-  @ViewChild('dropTarget') dropTarget: ElementRef;
+  @ViewChild('dropTarget', { static: true }) dropTarget: ElementRef;
   
   playItems: PlayItem[];
   isFileHover = false;
