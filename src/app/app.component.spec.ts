@@ -1,4 +1,4 @@
-import { TestBed, async, ComponentFixture, tick, fakeAsync, flushMicrotasks } from '@angular/core/testing';
+import { TestBed, ComponentFixture, tick, fakeAsync, flushMicrotasks, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { MatButtonModule } from '@angular/material/button';
@@ -45,7 +45,7 @@ describe('AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,

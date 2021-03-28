@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick, waitForAsync } from '@angular/core/testing';
 
 import { PlayerComponent } from './player.component';
 import { MatButtonModule } from '@angular/material/button';
@@ -45,7 +45,7 @@ describe('PlayerComponent', () => {
     }
   };
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ PlayerComponent, AudioPlusComponent ],
       imports: [
