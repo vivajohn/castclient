@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input, Output, EventEmitter, NgZone } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 // Useful info:
@@ -37,29 +37,37 @@ export class AudioPlusComponent implements OnInit {
   isEnded = true;
   source: SafeUrl;
 
-  constructor(private domSanitizer: DomSanitizer) { }
+  constructor(private domSanitizer: DomSanitizer, private zone: NgZone) { }
 
   ngOnInit() {
     this.player = this.audioElement.nativeElement;
     this.player.volume = 0.6;
 
     this.player.addEventListener('ended', () => {
-      this.setFlags(false, false, true);
-      this.ended.emit();
+      this.zone.run(() => {
+        this.setFlags(false, false, true);
+        this.ended.emit();
+      });
     });
 
     this.player.addEventListener('play', () => {
-      this.setFlags(true, false, false);
-      this.playing.emit();
+      this.zone.run(() => {
+        this.setFlags(true, false, false);
+        this.playing.emit();
+      });
     });
 
     this.player.addEventListener('pause', () => {
-      this.setFlags(false, true, false);
-      this.playing.emit();
+      this.zone.run(() => {
+        this.setFlags(false, true, false);
+        this.playing.emit();
+      });
     });
 
     this.player.addEventListener('volumechange', () => {
-      this.volumeChange.emit(this.player.volume * 100);
+      this.zone.run(() => {
+        this.volumeChange.emit(this.player.volume * 100);
+      });
     });
   }
 

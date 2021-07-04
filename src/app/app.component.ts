@@ -16,7 +16,9 @@ export class AppComponent {
   playItems: PlayItem[];
   isFileHover = false;
 
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(private snackBar: MatSnackBar) {
+    console.log("04.07.2021");
+  }
 
   upload(files: FileList) {
     this.makePlayList(files);

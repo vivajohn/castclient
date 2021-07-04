@@ -55,7 +55,7 @@ export class PlayerComponent implements AfterViewInit {
   ngAfterViewInit() {
     // Start the next song when one has finished
     this.player.ended.subscribe(() => {
-      this.playNext();
+      setTimeout(() => this.playNext(), 2000);
     });
   }
 
